@@ -1,6 +1,6 @@
 describe('DemoBlaze E2E Tests', () => {
 
-    it('повинен увійти в систему як користувач', () => {
+    it('should log in as a user', () => {
      
       cy.visit('https://www.demoblaze.com');
   
@@ -21,7 +21,7 @@ describe('DemoBlaze E2E Tests', () => {
       cy.contains('Welcome MarianaKhrystina', { timeout: 15000 }).should('be.visible');
     });
   
-    it('повинен зареєструвати нового користувача', () => {
+    it('should register a new user', () => {
      
       cy.visit('https://www.demoblaze.com');
   
@@ -44,7 +44,7 @@ describe('DemoBlaze E2E Tests', () => {
       });
     });
   
-    it('повинен додати Samsung Galaxy s6 у кошик', () => {
+    it('should add Samsung Galaxy s6 to the cart', () => {
       
       cy.visit('https://www.demoblaze.com');
   
@@ -62,10 +62,10 @@ describe('DemoBlaze E2E Tests', () => {
         expect(text).to.equal('Product added.');
       });
   
-      // Переход до кошика
+    
       cy.get('#cartur').click();
   
-      // Перевірка, що товар знаходиться в кошику
+      
       cy.contains('Samsung galaxy s6').should('be.visible');
     });
   
